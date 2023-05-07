@@ -1,0 +1,69 @@
+{
+    "name": "Steave",
+    "porfession": "Sowtware Engineer",
+    "age": 20,
+    "residence": "S.Korea",
+    "address": "S.Korea, Busan",
+    "languages": [
+        "Uzbek",
+        "Korean",
+        "English"
+    ],
+    "skills": [
+        "Html",
+        "Css",
+        "Js",
+        "NodeJS",
+        "Python"
+    ],
+    "extra_skills": [
+        "Bootstrap, Materialize",
+        "Styling,Sass",
+        "Django, flask",
+        "GIT Knowledge"
+    ],
+    "work_place": "IT Company",
+    "sevice_desc": "ament minim molit on deserunt ullamco est sit aliqua dolor do amet sint. Velit officia",
+    "about_me": "ament minim molit on deserunt ullamco est sit aliqua dolor do amet sint. Velit officia",
+    "city": "Denau",
+    "title": [
+        "Flower",
+        "Seedlings",
+        "Gardner",
+        "Old",
+        "New"
+    ],
+    "flower_desc": [
+        "What is a Flower?",
+        "What is a Seedling?",
+        "who is Gardner?"
+    ],
+    "flower_name": [
+        "Tulip",
+        "Daffodil",
+        "Poppy",
+        "Sunflower",
+        "Bluebell",
+        "Rose",
+        "Snowdrop",
+        "Cherry",
+        "Bloossom"
+    ],
+    "flower_price": [
+        "15$",
+        "25$",
+        "12$",
+        "20$",
+        "30$",
+        "35$",
+        "22$",
+        "19$",
+        "9$"
+    ],
+    "famous_words": [
+        "World is beautiful with flowers"
+    ],
+    "famous_name": [
+        "Steve Jobs"
+    ]
+}

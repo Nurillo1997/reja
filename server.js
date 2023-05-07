@@ -3,6 +3,17 @@ const express = require("express");
 const res = require("express/lib/response");
 const app = express();
 const http = require("http");//4dagi httpga tegishli
+const fs = require("fs");
+
+let user;
+fs.readFile("database/user.json", "utf8", (err, data) => {
+    if (err) {
+        console.log("ERROR:", err);
+    }
+    else {
+        user = JSON.parse(data)//parse qilganda user.jsondagi stringlarni dataga aylantiradi
+    }
+});
 //1: kirish codelari
 //public folderni ko'ra oladi, kelajakda styling filelar public folder ichiga joylashtiriladi
 app.use(express.static("public"));
@@ -37,6 +48,9 @@ app.post("/create-item", (req, res) => {
 
 app.get("/", function (req, res) {
     res.render(`harid`);
+});
+app.get("/author", (req, res) => {
+    res.render(`author`, { user: user });
 });
 
 //server hosil qilindi
