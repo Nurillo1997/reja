@@ -59,32 +59,3 @@ let PORT = 3000;
 server.listen(PORT, function () {
     console.log(`The server is running successfuly on port ${PORT}`);
 });
-
-// hammasidan keyin git init qilinadi
-// va .gitignore file ochib unga node_modules
-// fileni ignore qilish aytiladi
-// git status deb tekshiramiz
-// git add . (add qilamiz gitga)
-// git status (qayta tekshiramiz)
-// git reset (hamma add qilinga filelarin orqaga qaytaradi)
-// git commit -m "BRR: BUILD build express web server" (commit qilish)
-// git log --oneline(commitni tekshirish)
-// git yana git satausni tekshirvolamiz
-// git branch (qaysi branchligini  korsatadi)
-// git commit --amend(agar remot qilingan bo'lsa amend qilinmaydi ohirgi yozgan codeni birlashtirish)
-// :wq (write and quit) keyin git graphga train.js ni yozadi
-// keyin gitga borib new repository ochamiz
-// git remot (remoteni tekshirish)
-// remotega ulash uchun pasdagi 3 commentdan foydalanamiz
-
-//1)git remote add origin https://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@github.com/Nurillo1997/reja.git
-//pastdagi link bilan token bog'landi
-//git remote add origin https://github.com/Nurillo1997/reja.git
-//2)git branch -M master
-//3)git push -u origin master
-// git log --oneline(tekshiramiz) bu yerda remot qizilda chiqadi
-// git pull origin master(pull qilamiz masterni va eng ohirgi sourceni olamiz)
-//BSSR MODULE bu backend da frontend qurish
-
-//git reset --hard (o'zgartirishni orqaga qaytarish)
-//git clean -df()
