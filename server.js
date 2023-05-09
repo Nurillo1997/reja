@@ -14,7 +14,9 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
         user = JSON.parse(data)//parse qilganda user.jsondagi stringlarni dataga aylantiradi
     }
 });
+
 //1: kirish codelari
+
 //public folderni ko'ra oladi, kelajakda styling filelar public folder ichiga joylashtiriladi
 app.use(express.static("public"));
 // bu yerda express json formatid kitib kelayotgan datani
@@ -28,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 //2:Session code
 
 //3:View code
+
 //views folderini ichidan o'qiydi
 app.set("views", "views");
 app.set("view engine", "ejs");//ejs orqali backentda frontend yasaladi
@@ -41,14 +44,14 @@ app.get("/gift", function (reg, res) {
     res.end(`<h1>Siz sovg'alar bo'limidasiz</h1>`);
 });
 //formni actioni ga taluqli
-app.post("/create-item", (req, res) => {
-    console.log(req.body);
-    res.json({ test: "success" });
-});
+// app.post("/create-item", (req, res) => {
+//     console.log(req.body);
+//     res.json({ test: "success" });
+// });
 
-app.get("/", function (req, res) {
-    res.render(`harid`);
-});
+// app.get("/", function (req, res) {
+//     res.render(`harid`);
+// });
 app.get("/author", (req, res) => {
     res.render(`author`, { user: user });
 });
