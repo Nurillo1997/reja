@@ -12,6 +12,7 @@ function itemTemplate(item) {
 </li>`;
 }
 
+//create operation
 let createField = document.getElementById("create-field");
 
 document.getElementById("create-form")
@@ -28,6 +29,54 @@ document.getElementById("create-form")
                 createField.focus();
             })
             .catch(err => {
-                console.log("iltimos qaytadan harakat qiling")
+                console.log("iltimos qaytadan harakat qiling");
             });
     });
+
+    //delete operation
+document.addEventListener("click", function (e) {
+
+    if (e.target.classList.contains("delete-me")) {
+        if (confirm("Aniq ochirmooqchimisiz?")) {
+            axios.post("/delete-item", { id: e.target.getAttribute("data-id") })
+                .then(response => {
+                    console.log(response.data);
+                    e.target.parentElement.parentElement.remove();
+                })
+                .catch((err) => {
+                    console.log("iltimos qaytadan harakat qiling");
+                });
+        }
+    }
+    //edit operation
+    if (e.target.classList.contains("edit-me")) {
+        let userInput = prompt("o'zgartirish kiriting",
+            e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
+        if (userInput) {
+            axios
+                .post("/edit-item", {
+                    id: e.target.getAttribute("data-id"),
+                    new_input: userInput,
+                })
+                .then((response) => {
+                    console.log(response.data);
+                    e.target.parentElement.parentElement.querySelector(
+                        ".item-text"
+                    ).innerHTML = userInput;
+                })
+                .catch((err) => {
+                    console.log("iltimos qaytadan harakat qiling");
+                });
+        }
+    }
+});
+
+//delete all operation
+
+document.getElementById("clean-all").addEventListener("click", function () {
+    axios.post("/delete-all", { delete_all: true })
+        .then(response => {
+            alert(response.data.state);
+            document.location.reload();
+        })
+});
