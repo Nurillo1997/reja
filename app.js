@@ -4,11 +4,14 @@ const app = express();
 const fs = require("fs");
 
 // MongoDB chaqirish
+//server moduleni objecti bolgan db ni export qildik
 const db = require("./server").db();
+
 const mongodb = require("mongodb");
-let user;
+// let user;
 
 //1: kirish codelari
+//Express middleware
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -26,7 +29,7 @@ app.post("/create-item", (req, res) => {
     console.log("user entered /create-item");
     const new_reja = req.body.reja;
     db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
-        console.log(data.ops)
+        console.log(data.ops);
         res.json(data.ops[0]);
     });
 });
@@ -49,7 +52,7 @@ app.post("/edit-item", (req, res) => {
         { _id: new mongodb.ObjectId(data.id) },
         { $set: { reja: data.new_input } },
         function (err, data) {
-            res.json({ state: "seccess" });
+            res.json({ state: "success" });
         });
 });
 
